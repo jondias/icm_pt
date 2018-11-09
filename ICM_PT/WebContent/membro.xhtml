@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+	<ui:define name="content">
+		<h:form id="formCadastro">
+			<p:accordionPanel>
+				<p:tab title="Dados Pessoais">
+					<p>
+						<h:outputText value="Nome: " for="nomeTxt" />
+						<h:inputText id="nomeTxt" value="#{membroBean.nome}"
+							placeholder="Insira o nome do membro ou visitante" style="width: 239px; "></h:inputText>
+					</p>
+					<p>
+						<h:outputText value="Apelido: " for="apelidoTxt" />
+						<h:inputText id="apelidoTxt" value="#{membroBean.apelido}"
+							placeholder="Insira o apelido(sobrenome) do membro ou visitante" style="width: 435px; "></h:inputText>
+					</p>
+				</p:tab>
+				<p:tab title="Dados de Membro">
+					<p>
+						<h:outputText value="Selecione a igreja: " for="" />
+						<!-- <p:selectOneListbox value="#{bean.player}" converter="player" var="p">
+						<f:selectItems value="#{bean.players}" var="player"
+						itemLabel="#{player.name}" itemValue="#{player}" />
+						
+						<p:column>
+						<p:graphicImage value="/images/barca/#{p.photo}" width="40"/>
+						</p:column>
+						<p:column>
+						#{p.name} - #{p.number}
+						</p:column>
+						</p:selectOneListbox> -->
+					</p>
+				</p:tab>
+			</p:accordionPanel>
+			<div>
+				<p:commandButton value="salvar" id="saveWithIcon" actionListener="#{membroBean.salvar()}" update="formCadastro" icon="ui-icon-disk" />
+			</div>
+			<p:button outcome="/welcome.xhtml" icon="ui-icon-star" value="Voltar" title="Voltar para página principal"/>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

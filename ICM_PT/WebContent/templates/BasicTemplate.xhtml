@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<head>
+  <h:head>
+        <meta http-equiv="Content-Type" 
+              content="text/html; charset=UTF-8" />
+        <h:outputStylesheet library="css" name="default.css"/>
+    	<h:outputScript library="javax.faces" name="jsf.js"/>
+    	<h:outputScript library="script" name="main.js"/>
+<!--         <ui:include src=""></ui:include> -->
+        <title>ICM Portal</title>
+    </h:head>
+</head>
+
+<body>
+
+<div id="header">
+    <ui:insert name="header">
+        <ui:include src="/WEB-INF/templates/header.xhtml"/>
+    </ui:insert>
+</div>
+
+<div id="content" class="right_content">
+     <ui:insert name="content">Main Content</ui:insert>
+</div>
+
+<div id="footer">
+    <ui:insert name="footer">
+        <ui:include src="/WEB-INF/templates/footer.xhtml"/>
+    </ui:insert>
+</div>
+
+</body>
+</html>

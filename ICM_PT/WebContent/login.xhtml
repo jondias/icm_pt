@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<h:body>
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+	<ui:define name="content">
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputText value="Usuário: "></h:outputText>
+                <h:inputText id="userName" value="#{usuarioBean.user}" requiredMessage="O campo Name não pode estar vazio." validatorMessage="Favor verificar o campo Usuário." required="true"></h:inputText>
+                <p></p><h:message showSummary="true" showDetail="false"
+		          style="color: #d20005; font-family: 'New Century Schoolbook', serif; font-style: oblique;
+		          text-decoration: overline"
+		          id="errors1" for="userName"/>
+                <h:outputText value="Senha: "></h:outputText>
+                <h:inputSecret id="userPassword" value="#{usuarioBean.password}" validatorMessage="Favor verificar a Senha." requiredMessage="A senha não pode estar vazia." required="true"><f:validateLength minimum="3" maximum="8"></f:validateLength></h:inputSecret>
+                <p></p><h:message showSummary="true" showDetail="false"
+		          style="color: #d20005; font-family: 'New Century Schoolbook', serif; font-style: oblique;
+		          text-decoration: overline"
+		          id="errors2" for="userPassword"/>
+            </h:panelGrid>
+            <h:commandButton value="Login" action="#{usuarioBean.validation()}"></h:commandButton>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</h:body>
+</html>
